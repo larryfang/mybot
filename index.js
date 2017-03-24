@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === 'blondibytes') {
+    if (req.query['hub.verify_token'] === 'larryfang') {
         res.send(req.query['hub.challenge'])
     } else {
         res.send("Wrong token");
