@@ -1,0 +1,22 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "chatbot for facebook messenger integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js --trace-warnings"
+  },
+  "author": "larry fang",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "lodash.isnumber": "^3.0.3",
+    "striptags": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
