@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const api = require('./api');
-const token = "EAAXMHYwaswQBAB4ersI4wOJcFzmlsjY7jtsf9REhRIbEZA2wPz9csSgbaCHZBF6THtmAscq5Ft2LKJ2naUurZCeMh2r12TVcCUnyOIRieLZC0t7OHs1GOX3v13jEUuVVAaNqNZBpeHJN7l7lrBHaZAusfHulvAbbNqrMPgzlq07gZDZD";
+const token = "EAAXMHYwaswQBAKM5sDysaO7QaAPTw0z9Li6Oq0mRQdBJtIMdmm0akeDRpn3BlGZATT2qcX8VRLMuQLxalryZBwKKTb0JavzUZCmapGDwxL4UZCFiGk4Cs4pMNCzkmWvMXsW1j28s0MCZAwJPxELOfLtY6d53SWhbJQZBbPtlwPXwZDZD";
 const striptags = require('striptags');
 
 const app = express();
