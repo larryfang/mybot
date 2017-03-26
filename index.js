@@ -7,6 +7,12 @@ const api = require('./api');
 const token = "EAAXMHYwaswQBAKM5sDysaO7QaAPTw0z9Li6Oq0mRQdBJtIMdmm0akeDRpn3BlGZATT2qcX8VRLMuQLxalryZBwKKTb0JavzUZCmapGDwxL4UZCFiGk4Cs4pMNCzkmWvMXsW1j28s0MCZAwJPxELOfLtY6d53SWhbJQZBbPtlwPXwZDZD";
 const striptags = require('striptags');
 
+const apiai = require('apiai');
+const aiapp = apiai('99188fafe6dd44ec9d58771f7bc0100c');
+
+
+
+
 const app = express();
 
 let db = {};
@@ -109,6 +115,20 @@ app.post('/webhook/', function (req, res) {
                         sendText(sender, 'Sorry there is no results for this question, please try something else');
                     }
                 });
+            }
+            else {
+                let ai = aiapp.textRequest(text, {
+                    sessionId: 'tabby_cat' // use any arbitrary id
+                });
+                ai.on('response', (response) => {
+                    let aiText = response.result.fulfillment.speech;
+                    console.log(aiText);
+                    sendText(sender, aiText);
+                } )
+                ai.on('error', function(error) {
+                    console.log(error);
+                })
+                ai.end()
             }
         } else if(event.message && event.message.attachments) {
             const attachment = event.message.attachments[0];
